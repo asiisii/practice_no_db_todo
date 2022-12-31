@@ -1,12 +1,14 @@
 import React from 'react'
+import AddItem from './components/AddItem'
 
 const App = () => {
 	return (
-		<div>
-			<h1 className='text-center text-8xl font-extrabold text-[#05B0A1] drop-shadow-2xl'>
+		<>
+			<h1 className='pt-10 text-center text-8xl font-extrabold text-[#05B0A1]'>
 				GetDone
 			</h1>
-		</div>
+			<AddItem />
+		</>
 	)
 }
 
