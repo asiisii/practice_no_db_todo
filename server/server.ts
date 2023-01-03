@@ -8,7 +8,7 @@ import { Todo, Todos } from './types'
 const app = express()
 
 // Set the port for the app to listen on
-const port = 8888
+const port = process.env.PORT || 3000
 
 // Enable CORS so that the React app can make requests to the API
 app.use(cors())
@@ -96,5 +96,5 @@ app.delete('/todos/:id', (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-	console.log(`Server listening at http://localhost:${port}`)
+	console.log(`Server listening at ${port}`)
 })
