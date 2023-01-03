@@ -1,11 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-const BaseURL = process.env.BASE_URL || 'http://localhost:3000'
-console.log({baseurl: BaseURL, en: process.env.BASE_URL});
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 export const apiSlice = createApi({
 	reducerPath: 'api',
-	baseQuery: fetchBaseQuery({ baseUrl: BaseURL }),
+	baseQuery: fetchBaseQuery({ baseUrl: API_BASE_URL }),
 	tagTypes: ['Todos'],
 	endpoints: () => ({}),
 })
