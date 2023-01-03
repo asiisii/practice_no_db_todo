@@ -5,7 +5,7 @@
 
 
 [build.production]
-  BASE_URL = "https://musical-snickerdoodle-afc0db.netlify.app/"
+  BASE_URL = "https://musical-snickerdoodle-afc0db.netlify.app"
   PORT = "3000"
 
 [context.development]
