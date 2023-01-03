@@ -1,10 +1,4 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { createSelector, createEntityAdapter } from '@reduxjs/toolkit'
 import { apiSlice } from '../api/apiSlice'
-
-const todosAdapter = createEntityAdapter()
-
-const initialState = todosAdapter.getInitialState()
 
 interface Todo {
 	id: string
@@ -70,4 +64,4 @@ export const {
 	useUpdateTodoMutation,
 } = todoApiSlice
 
-export const getAllTodoItems = todoApiSlice.endpoints.getTodo.select()
+export const getAllTodoItems = todoApiSlice.endpoints.getTodo.select(undefined)
