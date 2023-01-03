@@ -6,7 +6,7 @@ import { todoApiSlice } from './features/api/todosApiSlice'
 import App from './App'
 import './main.css'
 
-store.dispatch(todoApiSlice.endpoints.getTodo.initiate())
+store.dispatch(todoApiSlice.endpoints.getTodo.initiate(undefined))
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
