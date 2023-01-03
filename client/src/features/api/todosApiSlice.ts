@@ -16,6 +16,7 @@ export const todoApiSlice = apiSlice.injectEndpoints({
 	endpoints: builder => ({
 		getTodo: builder.query({
 			query: () => '/todos',
+			transformResponse: (todos: Todo[]) => todos.reverse(),
 			providesTags: ['Todos'],
 		}),
 		addTodo: builder.mutation({
