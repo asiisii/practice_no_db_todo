@@ -8,7 +8,7 @@ import { Todo, Todos } from './types'
 const app = express()
 
 // Set the port for the app to listen on
-const port = 8000
+const port = 8888
 
 // Enable CORS so that the React app can make requests to the API
 app.use(cors())
