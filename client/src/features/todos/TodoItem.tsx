@@ -4,6 +4,7 @@ import {
 	useToggleCompleteMutation,
 	useUpdateTodoMutation,
 } from '../api/todosApiSlice'
+import { FaTrashAlt, FaEdit, FaWindowClose, FaSave } from 'react-icons/fa'
 
 type TodoItemProps = {
 	id: string
@@ -32,27 +33,54 @@ const TodoItem = ({ id, item, complete }: TodoItemProps) => {
 	}
 
 	return show ? (
-		<form onSubmit={e => e.preventDefault()} key={id}>
+		<form
+			className='flex items-center min-w-sm justify-between mt-2 bg-[#A98E4D] rounded-xl p-2'
+			onSubmit={e => e.preventDefault()}
+			key={id}
+		>
 			<input
 				type='text'
 				value={description}
 				onChange={e => setDescription(e.target.value)}
+				autoFocus
 			/>
-			<button onClick={updateTodoItem}>Update</button>
-			<button onClick={showEditModal}>Cancel</button>
+			<section className='flex'>
+				<button className='pr-6' onClick={updateTodoItem}>
+					<FaSave color='#05AEA0' />
+				</button>
+				<button onClick={showEditModal}>
+					<FaWindowClose />
+				</button>
+			</section>
 		</form>
 	) : (
-		<div key={id}>
-			<input
-				type='checkbox'
-				checked={complete}
-				onChange={() => toggleComplete(id)}
-			/>
-			<span style={{ textDecoration: complete ? 'line-through' : '' }}>
-				{item}
-			</span>
-			<button onClick={showEditModal}>Update</button>
-			<button onClick={() => deleteTodo(id)}>Delete</button>
+		<div
+			key={id}
+			className='flex justify-between mt-2 bg-[#A98E4D] rounded-xl p-2'
+		>
+			<section className='flex items-center'>
+				<input
+					type='checkbox'
+					checked={complete}
+					onChange={() => toggleComplete(id)}
+					className='items-center'
+				/>
+				<div
+					className={`pl-3 max-w-sm break-words whitespace-pre-wrap items-center ${
+						complete ? 'line-through' : 'no-underline'
+					}`}
+				>
+					{item}
+				</div>
+			</section>
+			<section className='flex'>
+				<button className='pr-6' onClick={showEditModal}>
+					<FaEdit color='#05AEA0' />
+				</button>
+				<button onClick={() => deleteTodo(id)}>
+					<FaTrashAlt color='red' />
+				</button>
+			</section>
 		</div>
 	)
 }
