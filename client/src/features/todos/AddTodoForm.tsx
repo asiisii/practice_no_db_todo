@@ -1,10 +1,6 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
 import TodoList from './TodoList'
-import {
-	useGetTodoQuery,
-	useAddTodoMutation,
-	getAllTodoItems,
-} from '../api/todosApiSlice'
+import { useAddTodoMutation, getAllTodoItems } from '../api/todosApiSlice'
 import { v4 as uuidv4 } from 'uuid'
 import { useSelector } from 'react-redux'
 
@@ -35,7 +31,7 @@ const AddTodoForm = () => {
 	}
 
 	return (
-		<div className='flex flex-col justify-between mr-auto ml-auto mt-12 text-4xl max-w-xl'>
+		<div className='flex flex-col justify-between mr-auto ml-auto mt-12 text-4xl max-w-xl items-center max-h-[70vh] overflow-hidden'>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<div>
 					{errors.item && (
@@ -54,9 +50,8 @@ const AddTodoForm = () => {
 					/>
 				</div>
 			</form>
-			{/* {data ? <TodoList todoList={data} /> : 'You have no todo task'} */}
 			{isError ? (
-				<>Oh no, there was an error</>
+				<>Oh no, there was an error, check to see if the server is running.</>
 			) : isLoading ? (
 				<>Loading...</>
 			) : isSuccess ? (

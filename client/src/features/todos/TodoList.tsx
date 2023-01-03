@@ -10,7 +10,7 @@ type TodoListProps = {
 
 const TodoList = ({ todoList }: TodoListProps) => {
 	return (
-		<ul>
+		<ul className='max-h-[90vh] min-w-full overflow-y-auto'>
 			{todoList.map(todo => (
 				<TodoItem
 					id={todo.id}
