@@ -8,7 +8,7 @@ import { Todo, Todos } from './types'
 const app = express()
 
 // Set the port for the app to listen on
-const port = 3000
+const port = 'https://musical-snickerdoodle-afc0db.netlify.app/'
 
 // Enable CORS so that the React app can make requests to the API
 app.use(cors())
