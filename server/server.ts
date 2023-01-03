@@ -3,7 +3,6 @@ import cors from 'cors'
 import bodyParser from 'body-parser'
 
 import { Todo, Todos } from './types'
-console.log('running');
 
 // Create an express app
 const app = express()
