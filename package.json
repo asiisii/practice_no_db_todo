@@ -1,8 +1,7 @@
 {
 	"name": "react-ts-tailwind-rtk-query",
 	"scripts": {
-		"start": "concurrently \"nodemon server/server.ts\" \"cd client && yarn run dev\"",
-		"build": "cp -r client/dist/* ."
+		"start": "concurrently \"nodemon server/server.ts\" \"cd client && yarn run dev\""
 	},
 	"devDependencies": {
 		"concurrently": "^7.6.0"
