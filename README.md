@@ -1,3 +1,5 @@
+# Practice building fullstack app without the use of database
+
 # after cloning follow the below steps to run the app
   `cd practice_no_db_todo
   yarn install`
@@ -12,3 +14,5 @@
 #### then to run both client and server together run
 
 `yarn start`
+
+
